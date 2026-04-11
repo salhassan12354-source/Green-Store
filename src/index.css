@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-arabic: 'Cairo', sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-navbar-bg: var(--navbar-bg);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    --background: #fdfdfc;
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --primary: #0f4d32;
+    --primary-foreground: #ffffff;
+    --secondary: #f4f4f2;
+    --secondary-foreground: #0a0a0a;
+    --muted: #f4f4f2;
+    --muted-foreground: #737373;
+    --accent: #f4f4f2;
+    --accent-foreground: #0a0a0a;
+    --destructive: #991b1b;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #0f4d32;
+    --radius: 0rem;
+    --navbar-bg: #fdfdfc;
+}
+
+.dark {
+    --background: #0a0a0a;
+    --foreground: #f5f5f5;
+    --card: #121212;
+    --card-foreground: #f5f5f5;
+    --popover: #121212;
+    --popover-foreground: #f5f5f5;
+    --primary: #1A7F4B;
+    --primary-foreground: #ffffff;
+    --secondary: #1a1a1a;
+    --secondary-foreground: #f5f5f5;
+    --muted: #1a1a1a;
+    --muted-foreground: #a3a3a3;
+    --accent: #1a1a1a;
+    --accent-foreground: #f5f5f5;
+    --destructive: #ef4444;
+    --border: #262626;
+    --input: #262626;
+    --ring: #1A7F4B;
+    --navbar-bg: #0a0a0a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground antialiased;
+    }
+  html {
+    @apply font-sans;
+    }
+  html[dir="rtl"] {
+    @apply font-arabic;
+  }
+}
+
+@layer utilities {
+  .text-luxury {
+    @apply tracking-[0.2em] uppercase font-light;
+  }
+  .bg-luxury-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(26, 127, 75, 0.05) 0%, transparent 100%);
+  }
+}
