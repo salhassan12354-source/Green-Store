@@ -32,6 +32,10 @@ export interface Product {
   popularity?: number;
   isSignature?: boolean;
   customWarrantyPlans?: WarrantyPlan[];
+  customGreenCarePrice?: {
+    price: number;
+    priceEG: number;
+  };
 }
 
 export interface CartItem {
@@ -43,6 +47,7 @@ export interface CartItem {
   warrantyId?: string;
   greenCarePlus: boolean;
   boxType: 'standard' | 'special';
+  shipToEgypt?: boolean;
   totalPrice: number;
 }
 

@@ -19,23 +19,23 @@ export const WARRANTY_PLANS: WarrantyPlan[] = [
   {
     id: 'silver',
     name: 'Silver',
-    price: 70,
+    price: 0,
     duration: '3 months',
-    features: ['Manufacturing defects only']
+    features: ['Manufacturing defects only', 'Free with product']
   },
   {
     id: 'gold',
     name: 'Gold',
     price: 120,
     duration: 'Covers any issue',
-    features: ['Free battery replacement']
+    features: ['Free battery replacement', 'Extended coverage']
   },
   {
     id: 'diamond',
     name: 'Diamond',
     price: 180,
     duration: 'Silver + Gold',
-    features: ['Limited maintenance and cleaning']
+    features: ['Limited maintenance and cleaning', 'Priority support']
   },
   {
     id: 'platinum',
@@ -50,10 +50,10 @@ export const SIGNATURE_WARRANTY_PLANS: WarrantyPlan[] = [
   {
     id: 'silver',
     name: 'Silver',
-    price: 100,
-    priceEG: 1200,
+    price: 0,
+    priceEG: 0,
     duration: '3 months',
-    features: ['Manufacturing defects only']
+    features: ['Manufacturing defects only', 'Free with product']
   },
   {
     id: 'gold',
@@ -61,7 +61,7 @@ export const SIGNATURE_WARRANTY_PLANS: WarrantyPlan[] = [
     price: 180,
     priceEG: 2700,
     duration: 'Covers any issue',
-    features: ['Free battery replacement']
+    features: ['Free battery replacement', 'Extended coverage']
   },
   {
     id: 'diamond',
@@ -69,7 +69,7 @@ export const SIGNATURE_WARRANTY_PLANS: WarrantyPlan[] = [
     price: 240,
     priceEG: 4300,
     duration: 'Silver + Gold',
-    features: ['Limited maintenance and cleaning']
+    features: ['Limited maintenance and cleaning', 'Priority support']
   },
   {
     id: 'platinum',
@@ -83,9 +83,212 @@ export const SIGNATURE_WARRANTY_PLANS: WarrantyPlan[] = [
 
 export const GREEN_CARE_PLUS_PRICE = 60;
 export const SPECIAL_BOX_PRICE = 100;
-export const EGYPT_SHIPPING_FEE_SAR = 100;
+export const EGYPT_SHIPPING_FEE_SAR = 230; // Approx 3000 EGP
+export const EGYPT_SHIPPING_FEE_EGP = 3000;
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'black-panther',
+    name: 'Green Black Panther',
+    price: 250,
+    priceEG: 4000,
+    description: 'A bold and powerful timepiece inspired by strength and agility. Features a sleek black design with premium accents.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775973152/BCO.143b70a3-549f-4470-8a16-0bef4ce6c63d_lzncim.png'],
+    stock: true,
+    shippingFee: 25,
+    shippingFeeEG: 3000,
+    category: 'men',
+    popularity: 96,
+    customWarrantyPlans: [
+      {
+        id: 'silver',
+        name: 'Silver',
+        price: 0,
+        priceEG: 0,
+        duration: '3 months',
+        features: ['Manufacturing defects only', 'Free with product']
+      },
+      {
+        id: 'gold',
+        name: 'Gold',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Covers any issue', 'Free battery replacement', 'Included with product']
+      },
+      {
+        id: 'diamond',
+        name: 'Diamond',
+        price: 100,
+        priceEG: 1500,
+        duration: 'Silver + Gold',
+        features: ['Limited maintenance and cleaning', 'Priority support']
+      },
+      {
+        id: 'platinum',
+        name: 'Platinum',
+        price: 180,
+        priceEG: 2800,
+        duration: '2 years',
+        features: ['Full maintenance', 'Free battery replacement', 'All previous plans']
+      }
+    ]
+  },
+  {
+    id: 'gravion',
+    name: 'Green Gravion',
+    price: 179,
+    priceEG: 2500,
+    description: 'Elegant and versatile, the Gravion is designed for the modern individual who values both style and function.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775973019/BCO.4bbbc26d-22cb-4332-8aaa-e00ee9cba93c_tpx7pl.png'],
+    stock: true,
+    shippingFee: 25,
+    shippingFeeEG: 3000,
+    category: 'men',
+    popularity: 90,
+  },
+  {
+    id: 'crownforge',
+    name: 'Green Crownforge',
+    price: 210,
+    priceEG: 3200,
+    description: 'Crafted with precision, the Crownforge represents the pinnacle of engineering and timeless design.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775973271/BCO.32a26ac8-ee65-497a-b745-3b5ab9ee4463_ipmz6f.png'],
+    stock: true,
+    shippingFee: 25,
+    shippingFeeEG: 3000,
+    category: 'men',
+    popularity: 94,
+    customWarrantyPlans: [
+      {
+        id: 'silver',
+        name: 'Silver',
+        price: 0,
+        priceEG: 0,
+        duration: '3 months',
+        features: ['Manufacturing defects only', 'Free with product']
+      },
+      {
+        id: 'gold',
+        name: 'Gold',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Covers any issue', 'Free battery replacement', 'Included with product']
+      },
+      {
+        id: 'diamond',
+        name: 'Diamond',
+        price: 100,
+        priceEG: 1500,
+        duration: 'Silver + Gold',
+        features: ['Limited maintenance and cleaning', 'Priority support']
+      },
+      {
+        id: 'platinum',
+        name: 'Platinum',
+        price: 180,
+        priceEG: 2800,
+        duration: '2 years',
+        features: ['Full maintenance', 'Free battery replacement', 'All previous plans']
+      }
+    ]
+  },
+  {
+    id: 'azure-crown',
+    name: 'Azure Crown',
+    price: 270,
+    priceEG: 4000,
+    description: 'A Signature series masterpiece. The Azure Crown combines royal elegance with unmatched precision.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775974035/BCO.7d0ca9be-4b3b-45a7-a3c7-69c0e3015059_dmcnsk.png'],
+    stock: true,
+    shippingFee: 25,
+    shippingFeeEG: 3000,
+    category: 'men',
+    popularity: 99,
+    isSignature: true,
+    customWarrantyPlans: [
+      {
+        id: 'silver',
+        name: 'Silver',
+        price: 0,
+        priceEG: 0,
+        duration: '3 months',
+        features: ['Manufacturing defects only', 'Free with product']
+      },
+      {
+        id: 'gold',
+        name: 'Gold',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Covers any issue', 'Free battery replacement', 'Included with product']
+      },
+      {
+        id: 'platinum_custom',
+        name: 'Platinum',
+        price: 150,
+        priceEG: 2400,
+        duration: '2 years',
+        features: ['Full maintenance', 'Free battery replacement', 'Priority service']
+      },
+      {
+        id: 'palladium',
+        name: 'Palladium',
+        price: 300,
+        priceEG: 4800,
+        duration: '3 years',
+        features: ['All Platinum services', 'Free battery replacement', 'Gift straps included', 'Elite concierge service']
+      },
+      {
+        id: 'green_eagle',
+        name: 'Green Eagle',
+        price: 500,
+        priceEG: 8000,
+        duration: '5 years',
+        features: ['Ultimate protection', 'Unlimited maintenance', 'VIP home service', 'Exclusive Green Eagle membership']
+      }
+    ]
+  },
+  {
+    id: 'rm-786',
+    name: 'Green RM‑786',
+    price: 210,
+    priceEG: 3400,
+    description: 'A masterpiece of precision and elegance, featuring a stunning design and premium finish.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775969399/Copilot_20260412_072018_kepb2l.png'],
+    stock: true,
+    shippingFee: 25,
+    shippingFeeEG: 3000,
+    category: 'men',
+    popularity: 98,
+  },
+  {
+    id: 'panthia',
+    name: 'Green Panthia',
+    price: 140,
+    priceEG: 2300,
+    description: 'Sophisticated style meets rugged durability. The Panthia is built for those who demand the best.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775969400/Copilot_20260412_073404_xvhmui.png'],
+    stock: true,
+    shippingFee: 25,
+    shippingFeeEG: 3000,
+    category: 'women',
+    popularity: 95,
+  },
+  {
+    id: 'golden-crystaliana',
+    name: 'Green Golden Crystaliana',
+    price: 160,
+    priceEG: 2600,
+    description: 'A beautiful watch with a stunning golden design and elegant finish. Perfect for any occasion.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775969399/Copilot_20260412_073448_n8eihe.png'],
+    stock: true,
+    shippingFee: 25,
+    shippingFeeEG: 3000,
+    category: 'men',
+    popularity: 92,
+  },
   {
     id: '1',
     name: 'Green GMT starbx',
@@ -95,7 +298,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     images: ['https://ae-pic-a1.aliexpress-media.com/kf/S09cd0809ed0c4f58ab642af32d18974b8.jpg_220x220q75.jpg_.avif'],
     stock: true,
     shippingFee: 25,
-    shippingFeeEG: 500,
+    shippingFeeEG: 3000,
     category: 'men',
     popularity: 85,
   },
@@ -114,13 +317,13 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: '3',
-    name: 'Green datjust pnik edtion',
+    name: 'Green Daylux PINK',
     price: 110,
     priceEG: 1899,
     originalPrice: 140,
     originalPriceEG: 2150,
     description: 'A beautiful women\'s watch with a delicate pink dial and elegant design. Perfect for any occasion.',
-    images: ['https://ae-pic-a1.aliexpress-media.com/kf/Sba4ea204173347dc8fab401e3da43dffl.jpg?has_lang=1&ver=2_220x220q75.jpg_.avif'],
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775974251/BCO.28b71305-0721-457d-b963-03156478d9d3_bdcbxa.png'],
     stock: true,
     shippingFee: 30,
     shippingFeeEG: 600,
@@ -171,39 +374,51 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'sig-3',
     name: 'Green Tommy Hilfiger 1792064',
-    price: 850,
-    priceEG: 13000,
-    description: 'Elite Signature Series. A masterpiece of design and precision by Tommy Hilfiger.',
-    images: ['https://f.nooncdn.com/p/1b07d586c2a35f488fc8bb5307fcbf1d%7Cpzsku/Z48D98B0C5218DB20925CZ/45/1770888654/d22c0de4-b97d-4bff-8703-1fd4ec15ca36.jpg?width=800'],
+    price: 1000,
+    priceEG: 16000,
+    description: 'Elite Signature Series. A masterpiece of design and precision by Tommy Hilfiger. Includes Gold Warranty.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1775971688/Copilot_20260412_082547_kita2s.png'],
     stock: true,
     shippingFee: 50,
-    shippingFeeEG: 1000,
+    shippingFeeEG: 3000,
     category: 'men',
     popularity: 100,
     isSignature: true,
+    customGreenCarePrice: {
+      price: 180,
+      priceEG: 2400
+    },
     customWarrantyPlans: [
+      {
+        id: 'gold',
+        name: 'Gold',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Covers any issue', 'Free battery replacement', 'Included with product']
+      },
       {
         id: 'platinum_custom',
         name: 'Platinum',
-        price: 500,
-        priceEG: 8500,
-        duration: '3 years',
+        price: 200,
+        priceEG: 3200,
+        duration: '2 years',
         features: ['Full maintenance', 'Free battery replacement', 'Priority service']
       },
       {
         id: 'palladium',
         name: 'Palladium',
-        price: 750,
-        priceEG: 12750,
-        duration: '5 years',
+        price: 400,
+        priceEG: 6400,
+        duration: '3 years',
         features: ['All Platinum services', 'Free battery replacement', 'Gift straps included', 'Elite concierge service']
       },
       {
         id: 'green_eagle',
         name: 'Green Eagle',
-        price: 870,
-        priceEG: 14790,
-        duration: 'Lifetime',
+        price: 600,
+        priceEG: 9600,
+        duration: '5 years',
         features: ['Ultimate protection', 'Unlimited maintenance', 'VIP home service', 'Exclusive Green Eagle membership']
       }
     ]
@@ -249,12 +464,14 @@ export const TRANSLATIONS: Translation = {
     it: 'Il negozio non spedisce attualmente in Egitto, ma accettiamo ordini dall\'Egitto e possiamo spedire l\'ordine in un punto in Arabia Saudita secondo il desiderio del cliente, e il cliente è responsabile di portarlo dall\'Arabia Saudita. Il prezzo della spedizione è a carico del solo cliente. L\'unico prezzo di spedizione a carico del negozio è in caso di difetto di fabbricazione; dove il cliente invia l\'orologio al negozio a Riyadh (a sue spese) e viene riparato e rispedito a spese del negozio.',
     fr: 'Le magasin n\'expédie pas actuellement en Égypte, mais nous acceptons les commandes d\'Égypte et pouvons expédier la commande vers un point en Arabie Saoudite selon le souhait du client, et le client est responsable de l\'apporter d\'Arabie Saoudite. Le prix de l\'expédition est à la charge du client uniquement. Le seul prix d\'expédition à la charge du magasin est en cas de défaut de fabrication ; où le cliente envoie la montre au magasin à Riyad (à ses frais) et elle est réparée et renvoyée aux frais du magasin.'
   },
+  greenCarePlusLimited: { ar: 'جرين كير بلس (ليمتيد اديشن)', en: 'Green Care Plus (Limited Edition)', es: 'Green Care Plus (Limited Edition)', it: 'Green Care Plus (Limited Edition)', fr: 'Green Care Plus (Limited Edition)' },
+  greenCarePlusLimitedDesc: { ar: 'حماية كاملة لساعتك: جرين شيلد المقوى وجرين بازل شيلد المقوى', en: 'Full protection for your watch: Reinforced Green Shield and Reinforced Green Bezel Shield', es: 'Protección completa', it: 'Protezione completa', fr: 'Protection complète' },
   greenCarePlus: { ar: 'جرين كير بلس', en: 'Green Care Plus', es: 'Green Care Plus', it: 'Green Care Plus', fr: 'Green Care Plus' },
   boxOption: { ar: 'خيار الصندوق', en: 'Box Option', es: 'Opción de caja', it: 'Opzione scatola', fr: 'Option de boîte' },
   standardBox: { ar: 'صندوق الشركة القياسي (مجاني)', en: 'Standard Company Box (Free)', es: 'Caja estándar (Gratis)', it: 'Scatola standard (Gratis)', fr: 'Boîte standard (Gratuit)' },
-  specialBox: { ar: 'صندوق خاص (+100 ⃁)', en: 'Special Box (+100 SAR)', es: 'Caja especial (+100 SAR)', it: 'Scatola speciale (+100 SAR)', fr: 'Boîte speciale (+100 SAR)' },
-  warrantyPolicy: { ar: 'سياسة الضمان', en: 'Warranty Policy', es: 'Política de garantía', it: 'Politica di garanzia', fr: 'Politique de garantie' },
-  warrantyDesc: { ar: 'تفاصيل خطط الحماية الأربع لدينا', en: 'Details on our 4 protection plans', es: 'Detalles de nuestros 4 planes de protección', it: 'Dettagli sui nostri 4 piani di protezione', fr: 'Détails sur nos 4 plans de protection' },
+  specialBox: { ar: 'صندوق خاص (+100 SAR)', en: 'Special Box (+100 SAR)', es: 'Caja especial (+100 SAR)', it: 'Scatola speciale (+100 SAR)', fr: 'Boîte speciale (+100 SAR)' },
+  warrantyPolicy: { ar: 'سياسة الضمان (الضمان الفضي مجاني)', en: 'Warranty Policy (Silver is Free)', es: 'Política de garantía', it: 'Politica di garanzia', fr: 'Politique de garantie' },
+  warrantyDesc: { ar: 'الضمان الفضي مجاني مع المنتج ويشمل أي مشاكل مصنعية. يمكنك ترقية خطة الضمان للحصول على مميزات إضافية.', en: 'Silver warranty is free with the product and covers manufacturing defects. You can upgrade your plan for extra features.', es: 'Detalles de nuestros planes de protección', it: 'Dettagli sui nostri piani di protezione', fr: 'Détails sur nos plans de protection' },
   warrantyWarning: { 
     ar: 'هام: أي محاولة من قبل العميل لفتح الساعة تلغي الضمان تماماً. المتجر غير مسؤول عن أي ضرر ناتج عن ذلك.', 
     en: 'IMPORTANT: Any attempt by the customer to open the watch voids the warranty completely. The store is not responsible for any damage caused by this.',
@@ -500,4 +717,24 @@ export const TRANSLATIONS: Translation = {
   newArrivals: { ar: 'وصل حديثاً', en: 'New Arrivals', es: 'Novedades', it: 'Nuovi arrivi', fr: 'Nouveautés' },
   bestSellers: { ar: 'الأكثر مبيعاً', en: 'Best Sellers', es: 'Más vendidos', it: 'I più venduti', fr: 'Meilleures ventes' },
   all: { ar: 'الكل', en: 'All', es: 'Todos', it: 'Tutti', fr: 'Tout' },
+  shipToEgypt: { ar: 'شحن إلى عنوانك المصري (+3000 ج.م)', en: 'Ship to your Egyptian address (+3000 EGP)', es: 'Enviar a Egipto (+3000 EGP)', it: 'Spedisci in Egitto (+3000 EGP)', fr: 'Expédier en Égypte (+3000 EGP)' },
+  silver: { ar: 'فضي (مجاني)', en: 'Silver (Free)', es: 'Plata (Gratis)', it: 'Argento (Gratis)', fr: 'Argent (Gratuit)' },
+  gold: { ar: 'ذهبي', en: 'Gold', es: 'Oro', it: 'Oro', fr: 'Or' },
+  diamond: { ar: 'الماسي', en: 'Diamond', es: 'Diamante', it: 'Diamante', fr: 'Diamant' },
+  platinum: { ar: 'بلاتيني', en: 'Platinum', es: 'Platino', it: 'Platino', fr: 'Platine' },
+  silverDuration: { ar: '3 أشهر - عيوب مصنعية فقط', en: '3 Months - Mfg defects only', es: '3 meses', it: '3 mesi', fr: '3 mois' },
+  goldDuration: { ar: 'يشمل أي مشكلة', en: 'Covers any issue', es: 'Cualquier problema', it: 'Qualsiasi problema', fr: 'Tout problème' },
+  diamondDuration: { ar: 'فضي + ذهبي', en: 'Silver + Gold', es: 'Plata + Oro', it: 'Argento + Oro', fr: 'Argent + Or' },
+  platinumDuration: { ar: 'سنتان - صيانة كاملة', en: '2 Years - Full maintenance', es: '2 años', it: '2 anni', fr: '2 ans' },
+  included: { ar: 'مشمول', en: 'Included', es: 'Incluido', it: 'Incluso', fr: 'Inclus' },
+  free: { ar: 'مجاني', en: 'Free', es: 'Gratis', it: 'Gratis', fr: 'Gratuit' },
+  reviews: { ar: 'التقييمات', en: 'Reviews', es: 'Reseñas', it: 'Recensioni', fr: 'Avis' },
+  writeReview: { ar: 'اكتب تقييماً', en: 'Write a Review', es: 'Escribir una reseña', it: 'Scrivi una recensione', fr: 'Écrire un avis' },
+  rating: { ar: 'التقييم', en: 'Rating', es: 'Calificación', it: 'Valutazione', fr: 'Note' },
+  comment: { ar: 'التعليق', en: 'Comment', es: 'Comentario', it: 'Commento', fr: 'Commentaire' },
+  submit: { ar: 'إرسال', en: 'Submit', es: 'Enviar', it: 'Invia', fr: 'Envoyer' },
+  name: { ar: 'الاسم', en: 'Name', es: 'Nombre', it: 'Nome', fr: 'Nom' },
+  averageRating: { ar: 'متوسط التقييم', en: 'Average Rating', es: 'Calificación promedio', it: 'Valutazione media', fr: 'Note moyenne' },
+  noReviews: { ar: 'لا توجد تقييمات بعد. كن أول من يقيم!', en: 'No reviews yet. Be the first to review!', es: 'No hay reseñas aún.', it: 'Nessuna recensione ancora.', fr: 'Pas encore d\'avis.' },
+  reviewSuccess: { ar: 'تم إضافة تقييمك بنجاح!', en: 'Review submitted successfully!', es: 'Reseña enviada con éxito.', it: 'Recensione inviata con successo.', fr: 'Avis envoyé avec succès.' },
 };

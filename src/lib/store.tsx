@@ -7,6 +7,15 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Language, Country, Product, CartItem } from '../types';
 import { INITIAL_PRODUCTS, EGYPT_SHIPPING_FEE_SAR } from './constants';
 
+interface Review {
+  id: string;
+  productId: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
 interface AppContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -23,6 +32,8 @@ interface AppContextType {
   isRTL: boolean;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  reviews: Review[];
+  addReview: (review: Omit<Review, 'id' | 'date'>) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -33,6 +44,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [reviews, setReviews] = useState<Review[]>([]);
 
   const isRTL = language === 'ar';
 
@@ -63,6 +75,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setCart([]);
   };
 
+  const addReview = (review: Omit<Review, 'id' | 'date'>) => {
+    const newReview: Review = {
+      ...review,
+      id: Math.random().toString(36).substr(2, 9),
+      date: new Date().toISOString(),
+    };
+    setReviews((prev) => [newReview, ...prev]);
+  };
+
   const convertPrice = (priceInSar: number, productId?: string) => {
     if (country === 'SA') return priceInSar;
     
@@ -79,7 +100,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const getCurrencySymbol = () => {
-    return country === 'SA' ? '⃁' : 'EGP';
+    return country === 'SA' ? 'SAR' : 'EGP';
   };
 
   return (
@@ -100,6 +121,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         isRTL,
         isDarkMode,
         toggleDarkMode,
+        reviews,
+        addReview,
       }}
     >
       {children}
