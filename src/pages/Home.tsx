@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Shield, Clock, Gift, ShoppingBag as CartIcon } from 'lucide-react';
 import { useAppContext } from '../lib/store';
-import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL, FREE_GIFT_IMAGE } from '../lib/constants';
+import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL, FREE_GIFT_IMAGE, GREEN_SIGNATURE_LOGO_URL } from '../lib/constants';
 import { Button, buttonVariants } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { cn } from '../lib/utils';
@@ -107,6 +107,16 @@ const Home = () => {
                     <Badge className="absolute top-4 left-4 bg-primary text-white">
                       {t('newArrival')}
                     </Badge>
+                  )}
+                  {product.isSignature && (
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-1.5 rounded-lg shadow-sm border border-primary/20">
+                      <img 
+                        src={GREEN_SIGNATURE_LOGO_URL} 
+                        alt="Signature" 
+                        className="h-6 w-auto object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
                   )}
                 </div>
                 <div className="p-6 pb-0">

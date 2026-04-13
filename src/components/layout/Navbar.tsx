@@ -55,8 +55,8 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-24 flex items-center",
-        isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm h-20" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex items-center bg-primary text-white shadow-md",
+        isScrolled ? "h-24" : "h-32"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
@@ -64,22 +64,22 @@ const Navbar = () => {
           <img 
             src={currentLogo} 
             alt="Green Store" 
-            className="h-12 w-auto object-contain"
+            className="h-24 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">{t('home')}</Link>
-          <Link to="/shop" className="text-sm font-medium hover:text-primary transition-colors">{t('shop')}</Link>
-          <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">{t('about')}</Link>
-          <Link to="/policies" className="text-sm font-medium hover:text-primary transition-colors">{t('policies')}</Link>
+          <Link to="/" className="text-sm font-medium hover:text-white/80 transition-colors">{t('home')}</Link>
+          <Link to="/shop" className="text-sm font-medium hover:text-white/80 transition-colors">{t('shop')}</Link>
+          <Link to="/about" className="text-sm font-medium hover:text-white/80 transition-colors">{t('about')}</Link>
+          <Link to="/policies" className="text-sm font-medium hover:text-white/80 transition-colors">{t('policies')}</Link>
         </div>
 
         <div className="flex items-center gap-4">
           <DropdownMenu>
-            <DropdownMenuTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }))}>
+            <DropdownMenuTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "text-white hover:bg-white/10")}>
               <Globe className="h-5 w-5" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -89,7 +89,7 @@ const Navbar = () => {
           </DropdownMenu>
 
           <DropdownMenu>
-            <DropdownMenuTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }))}>
+            <DropdownMenuTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "text-white hover:bg-white/10")}>
               <MapPin className="h-5 w-5" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -106,17 +106,18 @@ const Navbar = () => {
             variant="ghost" 
             size="icon" 
             onClick={toggleDarkMode}
+            className="text-white hover:bg-white/10"
           >
             {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
 
           <Link 
             to="/cart" 
-            className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "relative")}
+            className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "relative text-white hover:bg-white/10")}
           >
             <ShoppingCart className="h-5 w-5" />
             {cartItemsCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-white text-primary text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
                 {cartItemsCount}
               </span>
             )}
@@ -125,7 +126,7 @@ const Navbar = () => {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="md:hidden"
+            className="md:hidden text-white hover:bg-white/10"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -140,20 +141,20 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="absolute top-full left-0 right-0 bg-background border-b border-border md:hidden overflow-hidden"
+            className="absolute top-full left-0 right-0 bg-primary border-b border-white/10 md:hidden overflow-hidden text-white"
           >
             <div className="flex flex-col p-4 gap-4">
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t('home')}</Link>
-              <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t('shop')}</Link>
-              <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t('about')}</Link>
-              <Link to="/policies" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium">{t('policies')}</Link>
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium hover:text-white/80">{t('home')}</Link>
+              <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium hover:text-white/80">{t('shop')}</Link>
+              <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium hover:text-white/80">{t('about')}</Link>
+              <Link to="/policies" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium hover:text-white/80">{t('policies')}</Link>
               
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
+              <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                 <Button 
                   variant="outline" 
                   size="sm" 
                   onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-                  className="flex-1"
+                  className="flex-1 bg-transparent border-white text-white hover:bg-white hover:text-primary"
                 >
                   <Globe className="h-4 w-4 mr-2" />
                   {language === 'en' ? 'العربية' : 'English'}
@@ -162,7 +163,7 @@ const Navbar = () => {
                   variant="outline" 
                   size="sm" 
                   onClick={() => setCountry(country === 'SA' ? 'EG' : 'SA')}
-                  className="flex-1"
+                  className="flex-1 bg-transparent border-white text-white hover:bg-white hover:text-primary"
                 >
                   <MapPin className="h-4 w-4 mr-2" />
                   {country === 'SA' ? (language === 'ar' ? 'مصر' : 'Egypt') : (language === 'ar' ? 'السعودية' : 'KSA')}

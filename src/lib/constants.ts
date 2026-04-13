@@ -5,12 +5,12 @@
 
 import { Product, WarrantyPlan, Translation } from '../types';
 
-export const LOGO_URL = "https://drive.google.com/thumbnail?id=1ap6Vgn-RKWki_ltzj5FFlDFhxQlKP0tt&sz=w1000";
-export const DARK_LOGO_URL = "https://drive.google.com/thumbnail?id=1rHo__-o139uygH9SKwK3WxnhNsaBc5Xh&sz=w1000";
-export const GREEN_SIGNATURE_LOGO_URL = "https://drive.google.com/thumbnail?id=1ZWL1E9U-L8EC_em-R3zazzsp0BF7U_Qj&sz=w1000";
+export const LOGO_URL = "https://res.cloudinary.com/dozskgkr6/image/upload/v1776011907/gemini-2.5-flash-image_Use_the_uploaded_eagle_image_as_reference._Convert_it_into_sleek_minimalist_luxu-0_1_1_fxfegr.png";
+export const DARK_LOGO_URL = "https://res.cloudinary.com/dozskgkr6/image/upload/v1776011907/gemini-2.5-flash-image_Use_the_uploaded_eagle_image_as_reference._Convert_it_into_sleek_minimalist_luxu-0_1_1_fxfegr.png";
+export const GREEN_SIGNATURE_LOGO_URL = "https://res.cloudinary.com/dozskgkr6/image/upload/v1776011907/gemini-2.5-flash-image_Use_the_uploaded_eagle_image_as_reference._Convert_it_into_sleek_minimalist_luxu-0_1_1_fxfegr.png";
 
 export const COLORS = {
-  primary: "#1A7F4B",
+  primary: "#1A4D2E", // Darker green as seen in the user's image
   white: "#FFFFFF",
   black: "#000000",
 };
@@ -292,10 +292,10 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: '1',
     name: 'Green GMT starbx',
-    price: 95.50,
-    priceEG: 2000,
-    description: 'A masterpiece of precision and elegance, featuring a stunning design and premium finish.',
-    images: ['https://ae-pic-a1.aliexpress-media.com/kf/S09cd0809ed0c4f58ab642af32d18974b8.jpg_220x220q75.jpg_.avif'],
+    price: 138,
+    priceEG: 2350,
+    description: 'ساعة Green GMT StarBX الفاخرة، تصميم يجمع بين الأناقة والعملية مع ميزة توقيت جرينتش، مثالية للمسافرين وعشاق الساعات. شاملة الضمان الفضي مجاناً.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1776018214/BCO.f65f25e1-02b4-4ec9-af26-32d1aae7bfbf_osbswx.png'],
     stock: true,
     shippingFee: 25,
     shippingFeeEG: 3000,
@@ -305,15 +305,49 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: '2',
     name: 'Green NUTUS',
-    price: 130,
-    priceEG: 2300,
-    description: 'Sophisticated style meets rugged durability. The NUTUS is built for those who demand the best.',
-    images: ['https://ae-pic-a1.aliexpress-media.com/kf/S7b80eefcb9124eeba79b3e80478d0640i.jpg_220x220q75.jpg_.avif'],
+    price: 160,
+    priceEG: 2750,
+    description: 'Sophisticated style meets rugged durability. The NUTUS is built for those who demand the best. Includes Gold Warranty for free.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1776018580/BCO.8e717dac-e5b3-4747-88c0-62c73b494da3_igj17b.png'],
     stock: true,
     shippingFee: 40,
     shippingFeeEG: 700,
     category: 'men',
     popularity: 92,
+    customWarrantyPlans: [
+      {
+        id: 'silver',
+        name: 'Silver',
+        price: 0,
+        priceEG: 0,
+        duration: '3 months',
+        features: ['Manufacturing defects only', 'Free with product']
+      },
+      {
+        id: 'gold',
+        name: 'Gold',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Covers any issue', 'Free battery replacement', 'Included with product']
+      },
+      {
+        id: 'diamond',
+        name: 'Diamond',
+        price: 100,
+        priceEG: 1500,
+        duration: 'Silver + Gold',
+        features: ['Limited maintenance and cleaning', 'Priority support']
+      },
+      {
+        id: 'platinum',
+        name: 'Platinum',
+        price: 180,
+        priceEG: 2800,
+        duration: '2 years',
+        features: ['Full maintenance', 'Free battery replacement', 'All previous plans']
+      }
+    ]
   },
   {
     id: '3',
@@ -333,43 +367,129 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: '4',
     name: 'Green Tiffany thin edtion',
-    price: 89,
-    priceEG: 1500,
-    description: 'Ultra-thin and stylish, this men\'s watch features a classic Tiffany blue dial for a modern look.',
-    images: ['https://ae-pic-a1.aliexpress-media.com/kf/S2ee15a42acc44662a1b52d1f45c02a9aC.png_220x220.png_.avif'],
+    price: 165,
+    priceEG: 2338,
+    description: 'Ultra-thin and stylish, this men\'s watch features a classic Tiffany blue dial for a modern look. Includes Gold Warranty for free.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1776018524/BCO.32301135-067f-49e4-9400-6e6442f5bdc0_hr24ni.png'],
     stock: true,
     shippingFee: 20,
     shippingFeeEG: 400,
     category: 'men',
     popularity: 95,
+    customWarrantyPlans: [
+      {
+        id: 'silver',
+        name: 'Silver',
+        price: 0,
+        priceEG: 0,
+        duration: '3 months',
+        features: ['Manufacturing defects only', 'Free with product']
+      },
+      {
+        id: 'gold',
+        name: 'Gold',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Covers any issue', 'Free battery replacement', 'Included with product']
+      },
+      {
+        id: 'diamond',
+        name: 'Diamond',
+        price: 100,
+        priceEG: 1500,
+        duration: 'Silver + Gold',
+        features: ['Limited maintenance and cleaning', 'Priority support']
+      },
+      {
+        id: 'platinum',
+        name: 'Platinum',
+        price: 180,
+        priceEG: 2800,
+        duration: '2 years',
+        features: ['Full maintenance', 'Free battery replacement', 'All previous plans']
+      }
+    ]
   },
   {
     id: 'sig-1',
     name: 'Green casio edifice EFR-539L-7C',
-    price: 400,
-    priceEG: 6000,
-    description: 'Exclusive Signature Edition. A powerful timepiece from the world-renowned Edifice collection.',
-    images: ['https://f.nooncdn.com/p/a8d951b779d450909aba7c32b50d4a4c%7Cpzsku/Z149294FFAE39E8B2C1B6Z/45/1769409494/063c5da5-c16b-4618-90b5-4301b9f95490.jpg?width=800'],
+    price: 570,
+    priceEG: 8250,
+    description: 'Exclusive Signature Edition. A powerful timepiece from the world-renowned Edifice collection. Includes Diamond Warranty for free.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1776018079/BCO.6410cfaa-aece-4ab4-a6c7-c6052f6e67c6_kqy1ow.png'],
     stock: true,
     shippingFee: 50,
-    shippingFeeEG: 800,
+    shippingFeeEG: 3000,
     category: 'men',
     popularity: 100,
     isSignature: true,
+    customWarrantyPlans: [
+      {
+        id: 'diamond',
+        name: 'Diamond',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Silver + Gold coverage', 'Limited maintenance', 'Included with product']
+      },
+      {
+        id: 'platinum_custom',
+        name: 'Platinum',
+        price: 150,
+        priceEG: 2400,
+        duration: '2 years',
+        features: ['Full maintenance', 'Free battery replacement', 'Priority service']
+      },
+      {
+        id: 'palladium',
+        name: 'Palladium',
+        price: 300,
+        priceEG: 4800,
+        duration: '3 years',
+        features: ['All Platinum services', 'Free battery replacement', 'Gift straps included', 'Elite concierge service']
+      }
+    ]
   },
   {
     id: 'sig-2',
     name: 'Green CASIO Edifice EFR-539D-1A',
-    price: 370,
-    priceEG: 5250,
-    description: 'Signature Elite Series. Robust stainless steel design with precision Japanese movement.',
-    images: ['https://f.nooncdn.com/p/pzsku/Z0250297581CFB3110F5EZ/45/1749477530/69184f27-5953-4aef-bef2-668521e7c979.jpg?width=800'],
+    price: 589.99,
+    priceEG: 9000,
+    description: 'Signature Elite Series. Robust stainless steel design with precision Japanese movement. Includes Diamond Warranty for free.',
+    images: ['https://res.cloudinary.com/dozskgkr6/image/upload/v1776018673/BCO.de6ebd5b-9e6b-4df3-8d08-fc01b9d58729_x4u73v.png'],
     stock: true,
     shippingFee: 50,
-    shippingFeeEG: 800,
+    shippingFeeEG: 3000,
     category: 'men',
     popularity: 98,
     isSignature: true,
+    customWarrantyPlans: [
+      {
+        id: 'diamond',
+        name: 'Diamond',
+        price: 0,
+        priceEG: 0,
+        duration: 'Included',
+        features: ['Silver + Gold coverage', 'Limited maintenance', 'Included with product']
+      },
+      {
+        id: 'platinum_custom',
+        name: 'Platinum',
+        price: 150,
+        priceEG: 2400,
+        duration: '2 years',
+        features: ['Full maintenance', 'Free battery replacement', 'Priority service']
+      },
+      {
+        id: 'palladium',
+        name: 'Palladium',
+        price: 300,
+        priceEG: 4800,
+        duration: '3 years',
+        features: ['All Platinum services', 'Free battery replacement', 'Gift straps included', 'Elite concierge service']
+      }
+    ]
   },
   {
     id: 'sig-3',

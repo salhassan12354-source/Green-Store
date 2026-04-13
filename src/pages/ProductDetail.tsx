@@ -129,13 +129,23 @@ const ProductDetail = () => {
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Image Gallery */}
-        <div className="space-y-4">
-          <div className="aspect-square bg-muted rounded-2xl overflow-hidden">
+        <div className="space-y-4 relative">
+          <div className="aspect-square bg-muted rounded-2xl overflow-hidden relative">
             <img
               src={mainImage}
               alt={product.name}
               className="w-full h-full object-cover"
             />
+            {product.isSignature && (
+              <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm p-2 rounded-xl shadow-md border border-primary/20 z-10">
+                <img 
+                  src={GREEN_SIGNATURE_LOGO_URL} 
+                  alt="Signature" 
+                  className="h-10 w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            )}
           </div>
           <div className="grid grid-cols-4 gap-4">
             {product.images.map((img, i) => (

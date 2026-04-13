@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 import { useAppContext } from '../lib/store';
-import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL } from '../lib/constants';
+import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL, GREEN_SIGNATURE_LOGO_URL } from '../lib/constants';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -97,12 +97,22 @@ const Shop = () => {
             className="group bg-card rounded-2xl border border-border overflow-hidden"
           >
             <Link to={`/product/${product.id}`}>
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden relative">
                 <img
                   src={product.images[0]}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                {product.isSignature && (
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-1.5 rounded-lg shadow-sm border border-primary/20">
+                    <img 
+                      src={GREEN_SIGNATURE_LOGO_URL} 
+                      alt="Signature" 
+                      className="h-6 w-auto object-contain"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                )}
               </div>
               <div className="p-6 pb-0">
                 <h3 className="font-bold text-lg mb-2">{product.name}</h3>
