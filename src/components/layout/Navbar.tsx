@@ -56,7 +56,7 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex items-center bg-primary text-white shadow-md",
-        isScrolled ? "h-24" : "h-32"
+        isScrolled ? "h-32" : "h-40"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
@@ -64,7 +64,10 @@ const Navbar = () => {
           <img 
             src={currentLogo} 
             alt="Green Store" 
-            className="h-24 w-auto object-contain"
+            className={cn(
+              "transition-all duration-300 w-auto object-contain",
+              isScrolled ? "h-28" : "h-36"
+            )}
             referrerPolicy="no-referrer"
           />
         </Link>

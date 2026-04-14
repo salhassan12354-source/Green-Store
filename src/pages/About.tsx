@@ -5,7 +5,7 @@
 
 import { motion } from 'motion/react';
 import { useAppContext } from '../lib/store';
-import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL } from '../lib/constants';
+import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL, GREEN_CORP_LOGO_URL } from '../lib/constants';
 
 const About = () => {
   const { language } = useAppContext();
@@ -13,6 +13,34 @@ const About = () => {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      {/* Green Corp Section */}
+      <div className="mb-24 bg-muted/30 rounded-3xl p-8 md:p-16 border border-primary/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <img src={GREEN_CORP_LOGO_URL} alt="Green Corp" className="h-16 w-auto object-contain" />
+              <h2 className="text-3xl font-black uppercase tracking-tighter text-primary">{t('greenCorp')}</h2>
+            </div>
+            <h3 className="text-2xl font-bold mb-6">{t('greenCorpStoryTitle')}</h3>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              {t('greenCorpStory')}
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <img src={GREEN_CORP_LOGO_URL} alt="Green Corp Branding" className="w-full max-w-md h-auto drop-shadow-2xl" />
+          </motion.div>
+        </div>
+      </div>
+
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">{t('aboutTitle')}</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

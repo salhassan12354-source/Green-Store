@@ -25,7 +25,7 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
       <Navbar />
-      <main className="pt-24">
+      <main className="pt-32 md:pt-40">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
@@ -44,9 +44,9 @@ const AppContent = () => {
         href="https://wa.me/966500000000" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95 flex items-center justify-center"
+        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3 rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95 flex items-center justify-center"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-5 w-5" />
       </a>
     </div>
   );

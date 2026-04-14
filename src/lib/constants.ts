@@ -8,6 +8,7 @@ import { Product, WarrantyPlan, Translation } from '../types';
 export const LOGO_URL = "https://res.cloudinary.com/dozskgkr6/image/upload/v1776011907/gemini-2.5-flash-image_Use_the_uploaded_eagle_image_as_reference._Convert_it_into_sleek_minimalist_luxu-0_1_1_fxfegr.png";
 export const DARK_LOGO_URL = "https://res.cloudinary.com/dozskgkr6/image/upload/v1776011907/gemini-2.5-flash-image_Use_the_uploaded_eagle_image_as_reference._Convert_it_into_sleek_minimalist_luxu-0_1_1_fxfegr.png";
 export const GREEN_SIGNATURE_LOGO_URL = "https://res.cloudinary.com/dozskgkr6/image/upload/v1776011907/gemini-2.5-flash-image_Use_the_uploaded_eagle_image_as_reference._Convert_it_into_sleek_minimalist_luxu-0_1_1_fxfegr.png";
+export const GREEN_CORP_LOGO_URL = "https://res.cloudinary.com/dozskgkr6/image/upload/v1776152268/Copilot_20260414_103406_1_mqfv0p.png";
 
 export const COLORS = {
   primary: "#1A4D2E", // Darker green as seen in the user's image
@@ -857,4 +858,13 @@ export const TRANSLATIONS: Translation = {
   averageRating: { ar: 'متوسط التقييم', en: 'Average Rating', es: 'Calificación promedio', it: 'Valutazione media', fr: 'Note moyenne' },
   noReviews: { ar: 'لا توجد تقييمات بعد. كن أول من يقيم!', en: 'No reviews yet. Be the first to review!', es: 'No hay reseñas aún.', it: 'Nessuna recensione ancora.', fr: 'Pas encore d\'avis.' },
   reviewSuccess: { ar: 'تم إضافة تقييمك بنجاح!', en: 'Review submitted successfully!', es: 'Reseña enviada con éxito.', it: 'Recensione inviata con successo.', fr: 'Avis envoyé avec succès.' },
+  greenCorp: { ar: 'جرين كورب', en: 'Green Corp', es: 'Green Corp', it: 'Green Corp', fr: 'Green Corp' },
+  greenCorpStoryTitle: { ar: 'قصة جرين كورب: القوة والإبداع', en: 'The Story of Green Corp: Power and Creativity', es: 'La historia de Green Corp', it: 'La storia di Green Corp', fr: 'L\'histoire de Green Corp' },
+  greenCorpStory: { 
+    ar: 'جرين كورب هي الشركة الأم والمحرك الإبداعي وراء متجر جرين. تأسست برؤية تهدف إلى إعادة تعريف معايير الفخامة والابتكار في المنطقة. نحن نؤمن بأن القوة تكمن في التفاصيل، والإبداع هو لغتنا العالمية. من خلال جرين كورب، نسعى لبناء منظومة متكاملة تجمع بين التكنولوجيا المتطورة والحرفية التقليدية لتقديم تجربة لا مثيل لها لعملائنا.', 
+    en: 'Green Corp is the parent company and the creative engine behind Green Store. Founded with a vision to redefine the standards of luxury and innovation in the region. We believe that power lies in the details, and creativity is our universal language. Through Green Corp, we strive to build an integrated ecosystem that combines cutting-edge technology with traditional craftsmanship to provide an unparalleled experience for our customers.',
+    es: 'Green Corp es la empresa matriz y el motor creativo detrás de Green Store.',
+    it: 'Green Corp è la società madre e il motore creativo dietro Green Store.',
+    fr: 'Green Corp est la société mère et le moteur créatif derrière Green Store.',
+  },
 };

@@ -6,7 +6,7 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { useAppContext } from '../../lib/store';
-import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL } from '../../lib/constants';
+import { TRANSLATIONS, LOGO_URL, DARK_LOGO_URL, GREEN_CORP_LOGO_URL } from '../../lib/constants';
 
 const Footer = () => {
   const { language } = useAppContext();
@@ -52,8 +52,14 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} {t('brandName')}. {t('allRightsReserved')}.</p>
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-8 text-sm text-muted-foreground">
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-3">
+            <img src={GREEN_CORP_LOGO_URL} alt="Green Corp" className="h-6 w-auto object-contain" />
+            <span className="font-black text-lg uppercase tracking-tighter text-foreground">{t('greenCorp')}</span>
+          </div>
+          <p>© {new Date().getFullYear()} {t('brandName')}. {t('allRightsReserved')} {t('greenCorp')}.</p>
+        </div>
         <div className="flex gap-6">
           <a href="#" className="hover:text-primary transition-colors">Instagram</a>
           <a href="#" className="hover:text-primary transition-colors">Twitter</a>
